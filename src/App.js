@@ -17,6 +17,11 @@ import myImage11 from './assets/thumbnail_IMG_0801.jpeg';
 import myImage12 from './assets/thumbnail_IMG_0806.jpeg';
 
 function App() {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [isVideo1Intersecting, setIsVideo1Intersecting] = useState(false);
   const [isVideo2Intersecting, setIsVideo2Intersecting] = useState(false);
 
