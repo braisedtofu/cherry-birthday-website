@@ -22,8 +22,12 @@ function App() {
 
   const video1Ref = useRef(null);
   const video2Ref = useRef(null);
+  const myDivRef = useRef(null);
 
-
+  function scrollToElement() {
+    myDivRef.current.scrollIntoView({ behavior: 'smooth' });
+  }
+  
   useEffect(() => {
     const observer1 = new IntersectionObserver(
       ([entry]) => {
@@ -49,13 +53,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (!isVideo1Intersecting) {
+    if (!isVideo1Intersecting || !isVideo2Intersecting) {
       video1Ref.current.pause();
     } else {
       video1Ref.current.play();
 
     }
-  }, [isVideo1Intersecting]);
+  }, [isVideo1Intersecting, isVideo2Intersecting]);
 
   useEffect(() => {
     if (isVideo1Intersecting || !isVideo2Intersecting) {
@@ -69,7 +73,25 @@ function App() {
 
   return (
     <ScrollContainer>
+      
+            <ScrollPage>
+
+          <Animator animation={batch(Sticky(50,55), Fade(), Move())}>
+            <div className="text" >hi Cherry :)</div>
+          </Animator>
+          <Animator animation={batch(Sticky(50,60), Fade(), Move())}>
+            <div className="scrolltext" >scroll down</div>
+          </Animator>
+      </ScrollPage>
+
       <ScrollPage>
+      <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
+            <div ref={myDivRef}className="scrolltext" >↑</div>
+          </Animator>
+          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
+            <div className="scrolltext" >(scroll)</div>
+          </Animator>
+
           <Animator animation={batch(Sticky(), Fade())}>
                           <video ref={video1Ref} loop autoPlay playsInline>
                             <source src="https://wynnmybucket.s3.amazonaws.com/mumpiano.mp4" type="video/mp4"/>
