@@ -74,6 +74,12 @@ video{
 @media only screen and (max-width: 600px) {
 
 
+  video{
+    width:60vh;
+    height: 30vh; 
+    object-fit: cover;
+  }
+  
 .text{
   letter-spacing: 0.1rem;
   font-family: "BATANG";
