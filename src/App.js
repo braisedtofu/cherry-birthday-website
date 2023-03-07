@@ -71,7 +71,7 @@ function App() {
     <ScrollContainer>
       <ScrollPage>
           <Animator animation={batch(Sticky(), Fade())}>
-                          <video ref={video1Ref} loop autoPlay>
+                          <video ref={video1Ref} loop autoPlay playsInline>
                           <source url='s3://wynnmybucket/mumpiano.mp4' type="video/mp4"/>
                           </video> 
                           
@@ -96,7 +96,7 @@ function App() {
         </Animator>
 
         <Animator animation={batch(Fade(), Sticky())}>
-                <video ref={video2Ref} loop autoPlay>
+                <video ref={video2Ref} loop autoPlay playsInline>
                   <source url='s3://wynnmybucket/cherrycompilation.mp4' type="video/mp4"/>
                 </video>  
         </Animator>
