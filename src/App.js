@@ -72,7 +72,7 @@ function App() {
       <ScrollPage>
           <Animator animation={batch(Sticky(), Fade())}>
                           <video ref={video1Ref} loop>
-                          <source src={mumpiano} type="video/mp4"/>
+                          <source url='s3://wynnmybucket/mumpiano.mp4' type="video/mp4"/>
                           </video> 
                           
           </Animator>
@@ -97,7 +97,7 @@ function App() {
 
         <Animator animation={batch(Fade(), Sticky())}>
                 <video ref={video2Ref} loop>
-                  <source src={cherrycompilation} type="video/mp4"/>
+                  <source url='s3://wynnmybucket/cherrycompilation.mp4' type="video/mp4"/>
                 </video>  
         </Animator>
         <Animator animation={batch(Sticky(50,85), Fade(), Move())}>
