@@ -28,10 +28,6 @@ function App() {
   const video1Ref = useRef(null);
   const video2Ref = useRef(null);
   const myDivRef = useRef(null);
-
-  function scrollToElement() {
-    myDivRef.current.scrollIntoView({ behavior: 'smooth' });
-  }
   
   useEffect(() => {
     const observer1 = new IntersectionObserver(
@@ -79,7 +75,7 @@ function App() {
   return (
     <ScrollContainer>
       
-            <ScrollPage>
+        <ScrollPage>
 
           <Animator animation={batch(Sticky(50,55), Fade(), Move())}>
             <div className="text" >hi Cherry :)</div>
@@ -91,13 +87,13 @@ function App() {
 
       <ScrollPage>
       <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div ref={myDivRef}className="scrolltext" >↑</div>
+            <div className="scrolltext" >↑</div>
           </Animator>
           <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(),Sticky())}>
                           <video ref={video1Ref} loop autoPlay playsInline>
                             <source src="https://wynnmybucket.s3.amazonaws.com/mumpiano.mp4" type="video/mp4"/>
                           </video> 
@@ -122,7 +118,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
         </Animator>
 
-        <Animator animation={batch(Sticky())}>
+        <Animator animation={batch(Fade(),Sticky())}>
                 <video ref={video2Ref} loop autoPlay playsInline>
                   <source src= "https://wynnmybucket.s3.amazonaws.com/cherrycompilation.mp4" type="video/mp4"/>
                 </video>  
@@ -148,7 +144,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage} alt="Cherry Mo"/>
               </div>
@@ -175,7 +171,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch( Sticky())}>
+          <Animator animation={batch( Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage2} alt="Cherry Mo"/>
               </div>
@@ -202,7 +198,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage4} alt="Cherry Mo"/>
               </div>
@@ -229,7 +225,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch( Sticky())}>
+          <Animator animation={batch( Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage3} alt="Cherry Mo"/>
               </div>
@@ -256,7 +252,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage5} alt="Cherry Mo"/>
               </div>
@@ -283,7 +279,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage6} alt="Cherry Mo"/>
               </div>
@@ -310,7 +306,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage7} alt="Cherry Mo"/>
               </div>
@@ -337,7 +333,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage9} alt="Cherry Mo"/>
               </div>
@@ -364,7 +360,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage8} alt="Cherry Mo"/>
               </div>
@@ -391,7 +387,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(),Sticky())}>
               <div className="container">
                 <img src={myImage11} alt="Cherry Mo"/>
               </div>
@@ -418,7 +414,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch( Sticky())}>
+          <Animator animation={batch(Fade(), Sticky())}>
               <div className="container">
                 <img src={myImage12} alt="Cherry Mo"/>
               </div>
@@ -445,7 +441,7 @@ function App() {
             <div className="scrolltext" >(scroll)</div>
           </Animator>
 
-          <Animator animation={batch(Sticky())}>
+          <Animator animation={batch(Fade(), Sticky())}>
               <div className="container">
                 <img src={myImage10} alt="Cherry Mo"/>
               </div>
