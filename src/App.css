@@ -77,14 +77,27 @@ video{
 .text{
   letter-spacing: 0.1rem;
   font-family: "BATANG";
-  font-size: 7px;
+  font-size: 12px;
 }
 
 .scrolltext{
   letter-spacing: 0.1rem;
   font-family: "BATANG";
-  font-size: 7px;
+  font-size: 12px;
   color: #808080;
+}
+
+.container {
+  width: 80vw;
+  height: 40vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 }

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import mumpiano from './assets/mumpiano.mp4';
 import cherrycompilation from './assets/cherrycompilation.mp4';
@@ -24,19 +23,20 @@ function App() {
   const video1Ref = useRef(null);
   const video2Ref = useRef(null);
 
+
   useEffect(() => {
     const observer1 = new IntersectionObserver(
       ([entry]) => {
         setIsVideo1Intersecting(entry.isIntersecting);
       },
-      { threshold: 0} // Set the threshold to 50%
+      { threshold: 0.5} // Set the threshold to 50%
     );
 
     const observer2 = new IntersectionObserver(
       ([entry2]) => {
         setIsVideo2Intersecting(entry2.isIntersecting);
       },
-      { threshold: 0} // Set the threshold to 50%
+      { threshold: 0.5} // Set the threshold to 50%
     );
 
     observer1.observe(video1Ref.current);
@@ -66,19 +66,16 @@ function App() {
 
   }, [isVideo2Intersecting, isVideo1Intersecting]);
   
-  console.log(isVideo2Intersecting);
-  console.log(isVideo1Intersecting);
-
 
   return (
     <ScrollContainer>
       <ScrollPage>
-  <Animator animation={batch(Sticky(), Fade())}>
-                  <video ref={video1Ref} loop>
-                  <source src={mumpiano} type="video/mp4"/>
-                  </video> 
-                  
-  </Animator>
+          <Animator animation={batch(Sticky(), Fade())}>
+                          <video ref={video1Ref} loop>
+                          <source src={mumpiano} type="video/mp4"/>
+                          </video> 
+                          
+          </Animator>
           <Animator animation={batch(Sticky(50,85), Fade(), Move())}>
             <div className="text" >it's been a while, hasn't it?</div>
           </Animator>
@@ -93,25 +90,25 @@ function App() {
       <ScrollPage>
         <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
             <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
+        </Animator>
+        <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
             <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        </Animator>
 
-            <Animator animation={batch(Fade(), Sticky())}>
+        <Animator animation={batch(Fade(), Sticky())}>
                 <video ref={video2Ref} loop>
                   <source src={cherrycompilation} type="video/mp4"/>
                 </video>  
-            </Animator>
-            <Animator animation={batch(Sticky(50,85), Fade(), Move())}>
+        </Animator>
+        <Animator animation={batch(Sticky(50,85), Fade(), Move())}>
               <div className="text">30 years of memories, to be exact</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
+        </Animator>
+        <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
             <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
+        </Animator>
+        <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
             <div className="scrolltext" >↓</div>
-          </Animator>
+        </Animator>
 
         </ScrollPage>
 
@@ -128,12 +125,12 @@ function App() {
               <div className="container">
                 <img src={myImage} alt="Cherry Mo"/>
               </div>
-            </Animator>
+          </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
+          <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
               <div className="text">time flew, things changed</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
+          </Animator>
+          <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
             <div className="scrolltext" >(scroll)</div>
           </Animator>
           <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
