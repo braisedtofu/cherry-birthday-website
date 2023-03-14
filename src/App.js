@@ -194,7 +194,7 @@ function App() {
           <div className="scrolltexttop" >(scroll)</div>
         </Animator>
 
-        <Animator animation={batch(Fade())}>
+        <Animator animation={Fade()}>
           <div className="containervertical">
             <img src={myImage4} alt="Cherry Mo" />
           </div>
