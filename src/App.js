@@ -17,31 +17,27 @@ import myImage11 from './assets/thumbnail_IMG_0801.jpeg';
 import myImage12 from './assets/thumbnail_IMG_0806.jpeg';
 
 function App() {
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [isVideo1Intersecting, setIsVideo1Intersecting] = useState(false);
   const [isVideo2Intersecting, setIsVideo2Intersecting] = useState(false);
 
   const video1Ref = useRef(null);
   const video2Ref = useRef(null);
-  const myDivRef = useRef(null);
-  
+  const mytextRef = useRef(null);
+
   useEffect(() => {
     const observer1 = new IntersectionObserver(
       ([entry]) => {
         setIsVideo1Intersecting(entry.isIntersecting);
       },
-      { threshold: 0.5} // Set the threshold to 50%
+      { threshold: 0.5 } // Set the threshold to 50%
     );
 
     const observer2 = new IntersectionObserver(
       ([entry2]) => {
         setIsVideo2Intersecting(entry2.isIntersecting);
       },
-      { threshold: 0.5} // Set the threshold to 50%
+      { threshold: 0.5 } // Set the threshold to 50%
     );
 
     observer1.observe(video1Ref.current);
@@ -70,390 +66,390 @@ function App() {
     }
 
   }, [isVideo2Intersecting, isVideo1Intersecting]);
-  
+
 
   return (
     <ScrollContainer>
-      
-        <ScrollPage>
 
-          <Animator animation={batch(Sticky(50,55), Fade(), Move())}>
-            <div className="text" >hi Cherry :)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,60), Fade(), Move())}>
-            <div className="scrolltext" >scroll down</div>
-          </Animator>
+      <ScrollPage>
+
+        <Animator animation={Fade()}>
+          <div autofocus className="firstpagetext" >hi Cherry :)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="firstscrolltext" >scroll down</div>
+        </Animator>
       </ScrollPage>
 
       <ScrollPage>
-      <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Fade(),Sticky())}>
-                          <video ref={video1Ref} loop autoPlay playsInline>
-                            <source src="https://wynnmybucket.s3.amazonaws.com/mumpiano.mp4" type="video/mp4"/>
-                          </video> 
-                          
-          </Animator>
-          <Animator animation={batch(Sticky(50,85), Fade(), Move())}>
-            <div className="text" >it's been a while, hasn't it?</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <video ref={video1Ref} loop autoPlay playsInline>
+            <source src="https://wynnmybucket.s3.amazonaws.com/mumpiano.mp4" type="video/mp4" />
+          </video>
+
+        </Animator>
+        <Animator animation={ Fade()}>
+          <div className="text" >it's been a while, hasn't it?</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
       </ScrollPage>
-  
-      <ScrollPage>
-        <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-        </Animator>
-        <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-        </Animator>
-
-        <Animator animation={batch(Fade(),Sticky())}>
-                <video ref={video2Ref} loop autoPlay playsInline>
-                  <source src= "https://wynnmybucket.s3.amazonaws.com/cherrycompilation.mp4" type="video/mp4"/>
-                </video>  
-        </Animator>
-        <Animator animation={batch(Sticky(50,85), Fade(), Move())}>
-              <div className="text">30 years of memories, to be exact</div>
-        </Animator>
-        <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-        </Animator>
-        <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-        </Animator>
-
-        </ScrollPage>
 
       <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <video ref={video2Ref} loop autoPlay playsInline>
+            <source src="https://wynnmybucket.s3.amazonaws.com/cherrycompilation.mp4" type="video/mp4" />
+          </video>
+        </Animator>
+        <Animator animation={ Fade()}>
+          <div className="text">30 years of memories, to be exact</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-          <Animator animation={batch(Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage} alt="Cherry Mo"/>
-              </div>
-          </Animator>
+      </ScrollPage>
 
-          <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">time flew, things changed</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+      <ScrollPage>
 
-        </ScrollPage>
-        
-        <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <div className="container">
+            <img src={myImage} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch( Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage2} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">time flew, things changed</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">we both grew up so fast</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+      </ScrollPage>
 
-        </ScrollPage>
+      <ScrollPage>
 
-        <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <div className="container">
+            <img src={myImage2} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch(Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage4} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">we both grew up so fast</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">and got through some tough shit</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+      </ScrollPage>
 
-        </ScrollPage>
+      <ScrollPage>
 
-        <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky(58, 50))}>
+          <div className="containervertical">
+            <img src={myImage4} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch( Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage3} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">and got through some tough shit</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">but you will always be my sister</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+      </ScrollPage>
 
-        </ScrollPage>
+      <ScrollPage>
 
-        <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <div className="container">
+            <img src={myImage3} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch(Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage5} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">but you will always be my sister</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">and my biggest role model</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+      </ScrollPage>
 
-        </ScrollPage>
+      <ScrollPage>
 
-        <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <div className="container">
+            <img src={myImage5} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch(Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage6} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">and my biggest role model</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">even though you're super old, <br></br>nothing much has changed</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+      </ScrollPage>
 
-        </ScrollPage>
+      <ScrollPage>
 
-        <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <div className="container">
+            <img src={myImage6} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch(Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage7} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">even though you're super old, <br></br>nothing much has changed</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">you still love your 'me time'</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+      </ScrollPage>
 
-        </ScrollPage>
+      <ScrollPage>
 
-        <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky(58, 50))}>
+          <div className="container">
+            <img src={myImage7} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch(Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage9} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">you still love your 'me time'</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">you still have a huge appetite<br></br>(we're scared of hangry Cherry)</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+      </ScrollPage>
 
-        </ScrollPage>
+      <ScrollPage>
 
-        <ScrollPage>
+      <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky(58, 50))}>
+          <div className="container">
+            <img src={myImage9} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch(Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage8} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">you still have a huge appetite<br></br>(we're scared of hangry Cherry)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">and you still love adventures</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
+      </ScrollPage>
 
-        </ScrollPage>
+      <ScrollPage>
 
-        <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <div className="container">
+            <img src={myImage8} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch(Fade(),Sticky())}>
-              <div className="container">
-                <img src={myImage11} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">and you still love adventures</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">I'm so proud of how far you've come</div>
-              </Animator>
+      </ScrollPage>
 
-              <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
-        </ScrollPage>
+      <ScrollPage>
 
-        <ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <div className="container">
+            <img src={myImage11} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-          <Animator animation={batch(Fade(), Sticky())}>
-              <div className="container">
-                <img src={myImage12} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={Fade()}>
+          <div className="text">I'm so proud of how far you've come</div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">and miss you heaps!</div>
-            </Animator>
-              <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,97), Fade(), Move())}>
-            <div className="scrolltext" >↓</div>
-          </Animator>
-        </ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
+      </ScrollPage>
+
+      <ScrollPage>
+
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
+
+        <Animator animation={batch(Fade(), Sticky())}>
+          <div className="container">
+            <img src={myImage12} alt="Cherry Mo" />
+          </div>
+        </Animator>
+
+        <Animator animation={Fade()}>
+          <div className="text">and miss you heaps!</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottom" >(scroll)</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltextbottomarrow" >↓</div>
+        </Animator>
+      </ScrollPage>
 
 
-        <ScrollPage>
+      <ScrollPage>
 
-          <Animator animation={batch(Sticky(50,3), Fade(), Move())}>
-            <div className="scrolltext" >↑</div>
-          </Animator>
-          <Animator animation={batch(Sticky(50,6), Fade(), Move())}>
-            <div className="scrolltext" >(scroll)</div>
-          </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttoparrow" >↑</div>
+        </Animator>
+        <Animator animation={Fade()}>
+          <div className="scrolltexttop" >(scroll)</div>
+        </Animator>
 
-          <Animator animation={batch(Fade(), Sticky())}>
-              <div className="container">
-                <img src={myImage10} alt="Cherry Mo"/>
-              </div>
-            </Animator>
+        <Animator animation={batch(Fade(), Sticky())}>
+          <div className="container">
+            <img src={myImage10} alt="Cherry Mo" />
+          </div>
+        </Animator>
 
-            <Animator animation={batch( Fade(), Sticky(50,85), Move())}>
-              <div className="text">Happy birthday &lt;3</div>
-            </Animator>
-            <Animator animation={batch(Sticky(50,94), Fade(), Move())}>
-            <div className="scrolltext" >(end)</div>
-          </Animator>
-        </ScrollPage>
+        <Animator animation={Fade()}>
+          <div className="text">Happy birthday &lt;3</div>
+        </Animator>
+        <Animator animation={ Fade()}>
+          <div className="scrolltextbottom" >(end)</div>
+        </Animator>
+      </ScrollPage>
 
     </ScrollContainer>
   );
