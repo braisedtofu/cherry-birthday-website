@@ -194,7 +194,7 @@ function App() {
           <div className="scrolltexttop" >(scroll)</div>
         </Animator>
 
-        <Animator animation={batch(Fade(), Sticky(58, 50))}>
+        <Animator animation={batch(Fade())}>
           <div className="containervertical">
             <img src={myImage4} alt="Cherry Mo" />
           </div>
@@ -302,8 +302,8 @@ function App() {
           <div className="scrolltexttop" >(scroll)</div>
         </Animator>
 
-        <Animator animation={batch(Fade(), Sticky(58, 50))}>
-          <div className="container">
+        <Animator animation={Fade()}>
+          <div className="containervertical">
             <img src={myImage7} alt="Cherry Mo" />
           </div>
         </Animator>
@@ -329,8 +329,8 @@ function App() {
           <div className="scrolltexttop" >(scroll)</div>
         </Animator>
 
-        <Animator animation={batch(Fade(), Sticky(58, 50))}>
-          <div className="container">
+        <Animator animation={Fade()}>
+          <div className="containervertical">
             <img src={myImage9} alt="Cherry Mo" />
           </div>
         </Animator>

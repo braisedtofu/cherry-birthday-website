@@ -134,7 +134,7 @@ video{
   height: 50vh; 
   position: fixed;
   top: 50%;
-  left: 60%;
+  left: 58%;
   transform: translate(-45%, -50%);
 
 }
@@ -171,13 +171,6 @@ video{
   color: #808080;
 }
 
-.container {
-  width: 80vw;
-  height: 40vh; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .container img {
   max-width: 100%;
