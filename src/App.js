@@ -90,7 +90,7 @@ function App() {
         </Animator>
 
         <Animator animation={batch(Fade(), Sticky())}>
-          <video ref={video1Ref} loop autoPlay playsInline>
+          <video ref={video1Ref} loop autoPlay playsInline muted>
             <source src="https://wynnmybucket.s3.amazonaws.com/mumpiano.mp4" type="video/mp4" />
           </video>
 
