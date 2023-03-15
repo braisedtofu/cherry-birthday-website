@@ -90,7 +90,7 @@ function App() {
         </Animator>
 
         <Animator animation={batch(Fade(), Sticky())}>
-          <video ref={video1Ref} loop autoPlay playsInline muted preload>
+          <video ref={video1Ref} loop playsInline preload>
             <source src="https://wynnmybucket.s3.amazonaws.com/mumpiano.mp4" type="video/mp4" />
           </video>
 
@@ -115,7 +115,7 @@ function App() {
         </Animator>
 
         <Animator animation={batch(Fade(), Sticky())}>
-          <video ref={video2Ref} loop autoPlay playsInline preload>
+          <video ref={video2Ref} loop playsInline preload>
             <source src="https://wynnmybucket.s3.amazonaws.com/cherrycompilation.mp4" type="video/mp4" />
           </video>
         </Animator>
